@@ -33,7 +33,7 @@ const Calculator = () => {
                    <span> </span>
                    <input type="button" value="=" onClick="calculate()" />
                    <span> </span>
-                   <input type="text" id="answer" />
+                   <input type="text" id="answer" value= {answer} onChange={event => setAnswer(event.tartget.value) }  />
                  
                  
                                
