@@ -29,7 +29,7 @@ const Calculator = () => {
                        <option value="divide">/</option>
                    </select>
                    <span> </span>
-                   <input type="text" id="num2" />
+                   <input type="text" id="operand2" value={operand2} onChange= {event => setOperand2(event.target.value)} />
                    <span> </span>
                    <input type="button" value="=" onClick="calculate()" />
                    <span> </span>
