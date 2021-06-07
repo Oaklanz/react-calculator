@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
 
-
 const Calculator = () => {
 
   const [operand1, setOperand1] = useState('')
-  const [operation, setOperation] = useState('')
+  const [operation, setOperation] = useState('+')
   const [operand2, setOperand2] = useState('')
   const [answer, setAnswer] = useState('')
     
@@ -13,46 +12,51 @@ const Calculator = () => {
       setOperand1(event.target.value)
   }
 
+  const calculate = () =>{
+
+     setAnswer('')
+
+      switch (operation) {
+      
+     case '+':
+          return setAnswer(parseInt(operand1)+parseInt(operand2))
+     case '-':
+          return setAnswer(parseInt(operand1)-parseInt(operand2))
+     case '*':
+          return setAnswer(parseInt(operand1)*parseInt(operand2))
+     case '/':
+          return setAnswer(parseInt(operand1)/parseInt(operand2))
+          default:
+            return setAnswer('Please provide a valid number for both operand')
+        }
+
+     }
+
+  
+
     return (
             <div>
-                
-    
+                  
             <div>
                 <div className="maths">
                     <h2>React Calculator</h2> 
                     <input type="text" id="operand1" value={operand1} onChange= {(event) => setOperand1(event.target.value)}/>
                     <span> </span>
                     <select id="operation" value={operation} onChange= {(event) => setOperation(event.target.value)} >
-                        <option value="add">+</option>
-                        <option value="subtract">-</option>
-                        <option value="multiply">*</option>
-                        <option value="divide">/</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
                     </select>
                     <span> </span>
                     <input type="text" id="operand2" value={operand2} onChange= {(event) => setOperand2(event.target.value)} />
                     <span> </span>
-                    <input type="button" value="=" onClick="calculate()" />
+                    <button type="button" value="=" onClick= {calculate}>=</button>   
                     <span> </span>
-                    <input type="text" id="answer" value= {answer} onChange={(event) => setAnswer(event.tartget.value) }  />
-                    
-                    
-                                
-                    function calculate() {
-
-                    <div>
-                            <var num1 = "getElementById(num1).value" />
-                                
-                        <var num2 = "getElementById(num2).value" />
-                                    
-                        <var num3 = "parseInt(num1) + parseInt(num2)"/> 
+                    <input type="text" id="answer" value= {answer}   />                            
                     </div>
                     
-                    } 
-                    
-                    </div>
-                    
-                </div>
-                
+                </div>              
 
             </div>        
             

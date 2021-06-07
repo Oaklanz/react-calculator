@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 .maths {
-  
+  background-color: burlywood;
 }
 
 @media (prefers-reduced-motion: no-preference) {
