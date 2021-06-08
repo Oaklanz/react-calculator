@@ -6,6 +6,7 @@ const Calculator = () => {
   const [operation, setOperation] = useState('+')
   const [operand2, setOperand2] = useState('')
   const [answer, setAnswer] = useState('')
+  const [error, setError] = useState('')
     
 
   const upDateNumber = (event) => {
@@ -13,8 +14,11 @@ const Calculator = () => {
   }
 
   const calculate = () =>{
-
+      //if (!calculate()isValid){setAnswer('')
+    //return setError('Please provide a valid number for both operands')}
+      
      setAnswer('')
+     setError('')
 
       switch (operation) {
       
@@ -32,8 +36,6 @@ const Calculator = () => {
 
      }
 
-  
-
     return (
             <div>
                   
@@ -50,10 +52,14 @@ const Calculator = () => {
                     </select>
                     <span> </span>
                     <input type="text" id="operand2" value={operand2} onChange= {(event) => setOperand2(event.target.value)} />
+                    
                     <span> </span>
                     <button type="button" value="=" onClick= {calculate}>=</button>   
                     <span> </span>
-                    <input type="text" id="answer" value= {answer}   />                            
+                    <input type="text" id="answer" value= {answer} />     
+                    <div className='error'> {error}
+                    </div>   
+                               
                     </div>
                     
                 </div>              

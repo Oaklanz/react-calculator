@@ -9,6 +9,9 @@
 .maths {
   background-color: burlywood;
 }
+.error{
+  color: red;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
